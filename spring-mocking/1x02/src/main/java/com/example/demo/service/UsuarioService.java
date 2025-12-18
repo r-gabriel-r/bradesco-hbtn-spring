@@ -12,7 +12,7 @@ public class UsuarioService {
 		this.usuarioRepository = usuarioRepository;
 	}
 	
-	public Usuario buscarUsuarioPorId(long id) {
+	public Usuario buscarUsuarioPorId(Long id) {
 		
 		var usuario = this.usuarioRepository.findById(id);
 		if(usuario.isPresent()) {
