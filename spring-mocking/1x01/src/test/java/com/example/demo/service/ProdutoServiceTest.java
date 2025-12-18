@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
 
@@ -32,7 +31,7 @@ class ProdutoServiceTest {
 		// when
 		var prod = produtoService.buscarPorId(1L);
 		// then
-		assertThat(prod).isEqualTo(expect);
+		Assertions.assertEquals(expect, prod);
 
 	}
 
@@ -43,9 +42,7 @@ class ProdutoServiceTest {
 		// then
 		RuntimeException exception = Assertions.assertThrows(RuntimeException.class,
 				() -> produtoService.buscarPorId(1L));
-
-		// Optionally, assert the exception's message
-		assertThat(exception.getMessage()).isEqualTo("Produto não encontrado");
+		Assertions.assertEquals("Produto não encontrado", exception.getMessage());
 
 	}
 }
